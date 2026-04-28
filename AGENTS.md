@@ -1,27 +1,21 @@
 # gf-codex Project Instructions
 
-This repository is for configuring and refining Dan's Codex workflow, including migration notes from Claude Code, Codex conventions, custom skill planning, and agent-workflow documentation.
+This repository is reserved for the specific coding project Dan wants to explore with Codex.
 
-## Project Purpose
+Global Codex preferences, Claude-to-Codex migration notes, and general workflow documentation live outside this repo:
 
-Use this repo to develop, document, and test Dan's Codex operating model:
+- Global instructions: `~/.codex/AGENTS.md`
+- Global memory: `~/.codex/memories/`
+- Workflow reference repo: `~/code/codex-workflow`
+- Custom skill source repo: `~/code/codex-skills`
 
-- Global and project-level Codex instruction conventions.
-- Custom Codex skills and plugin planning.
-- Coding workflow plans, specs, and validation patterns.
-- Research notes comparing Codex, Claude Code, CLI tools, browser automation, and related agent infrastructure.
+## Project Documentation
 
-## Documentation Layout
+Use this repo's `docs/` tree only for project-specific artifacts:
 
-- `docs/codex/plans/` - Codex workflow and implementation plans.
-- `docs/codex/specs/` - Specs for custom skills, plugins, or workflow conventions.
-- `docs/codex/session-state.md` - Current long-running session handoff state.
-- `docs/discovery/` - Research, architecture notes, product comparisons, and tool evaluations.
+- `docs/codex/plans/` - Project implementation plans.
+- `docs/codex/specs/` - Project specs and design notes.
+- `docs/codex/session-state.md` - Current project handoff state.
+- `docs/discovery/` - Project research, codebase analysis, and source notes.
 
-## Working Conventions
-
-This repo may contain documentation, configuration examples, scripts, and small tooling. Do not assume every task here is an application build.
-
-When making durable workflow decisions, update the relevant docs. When a session reaches a natural milestone or Dan is likely to reset context, update `docs/codex/session-state.md`.
-
-Use `~/code/codex-skills` as the source-of-truth repository for reusable custom Codex skills. This repo can reference those skills, but should not duplicate their full source unless there is a deliberate reason.
+Once Dan defines the project goal, update this file with the project's purpose, commands, architecture notes, and validation workflow.
