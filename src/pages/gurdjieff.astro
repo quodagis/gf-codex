@@ -1,0 +1,13 @@
+---
+import InteriorHero from "@/components/InteriorHero.astro";
+import StorySection from "@/components/StorySection.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages } from "@/data/site";
+
+const page = pages.gurdjieff;
+---
+
+<BaseLayout title="The Gurdjieff Foundation of Los Angeles - GI Gurdjieff's biography">
+  <InteriorHero eyebrow={page.eyebrow} title={page.title} />
+  <StorySection {...page} />
+</BaseLayout>

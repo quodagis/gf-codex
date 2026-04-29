@@ -4,17 +4,34 @@ Last updated: 2026-04-28
 
 ## Current State
 
-This repo has been cleaned up so it can serve as the specific coding project Dan originally intended.
+This repo is now the prototype project for rebuilding the Gurdjieff Foundation of Los Angeles website.
 
-General Codex setup and migration artifacts were moved to `~/code/codex-workflow`.
+Dan chose a frontend-first architecture using Astro + Tailwind, with Cloudflare Pages as the likely host. The CMS decision is intentionally deferred until after the first visual/content prototype, with TinaCMS and Sanity still under consideration.
 
 ## Project Status
 
-The project goal, architecture, commands, and implementation plan have not been defined yet.
+Initial Astro/Tailwind scaffold is in place. The old LA site content has been migrated into structured local data in `src/data/site.ts`, and first-pass pages exist for:
+
+- Home
+- G.I. Gurdjieff
+- The Foundation in Los Angeles
+- Practice
+- Resources
+- Links
+- Contact
+
+Architecture notes are in `docs/codex/specs/frontend-architecture.md`.
+
+Validation completed:
+
+- `npm run build`
+- `npm run check`
+
+Latest content decision: visible site copy should come from the old LA site only. The prototype was revised to remove invented hero blurbs, summary card descriptions, footer descriptive copy, and adapted page headings.
 
 ## Next Steps
 
-1. Dan describes the actual project goal for `gf-codex`.
-2. Update `AGENTS.md` with project-specific context and commands.
-3. Create a project plan under `docs/codex/plans/` if the work is substantial.
-4. Add discovery notes under `docs/discovery/` as project research begins.
+1. Review the local visual prototype in browser.
+2. Refine typography, imagery, spacing, and page rhythm against the New York reference aesthetic.
+3. Decide whether the editable content model should move to TinaCMS or Sanity.
+4. Add Cloudflare Pages deployment configuration once the prototype direction is approved.

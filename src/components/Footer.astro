@@ -1,0 +1,25 @@
+---
+import { navItems, site } from "@/data/site";
+import { sitePath } from "@/utils/paths";
+---
+
+<footer class="bg-[#25231f] px-5 py-12 text-[#f4f0e8] sm:px-8">
+  <div class="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+    <div>
+      <p class="serif text-2xl">{site.name}</p>
+    </div>
+    <nav class="grid grid-cols-2 gap-3 text-sm text-[#d9d0c1]">
+      {navItems.map((item) => (
+        <a class="transition hover:text-white" href={sitePath(item.href)}>{item.label}</a>
+      ))}
+    </nav>
+    <div class="text-sm leading-7 text-[#d9d0c1]">
+      <p>{site.phone}</p>
+      <a class="transition hover:text-white" href={`mailto:${site.email}`}>{site.email}</a>
+      <p class="mt-4">{site.address}</p>
+    </div>
+  </div>
+  <div class="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-xs text-[#b9b0a3]">
+    © {new Date().getFullYear()} {site.copyright}
+  </div>
+</footer>

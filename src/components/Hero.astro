@@ -1,0 +1,27 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  dek?: string;
+  image: string;
+}
+
+const { eyebrow, title, dek, image } = Astro.props;
+import { sitePath } from "@/utils/paths";
+---
+
+<section class="relative min-h-[92vh] overflow-hidden bg-[#25231f] text-white">
+  <img
+    src={sitePath(image)}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover opacity-55 mix-blend-luminosity"
+  />
+  <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(37,35,31,0.86),rgba(37,35,31,0.42),rgba(37,35,31,0.18))]"></div>
+  <div class="relative mx-auto flex min-h-[92vh] max-w-7xl items-end px-5 pb-20 pt-32 sm:px-8 lg:pb-24">
+    <div class="max-w-3xl">
+      {eyebrow && <p class="reveal text-xs font-semibold uppercase tracking-[0.28em] text-[#dfd5c6]">{eyebrow}</p>}
+      <h1 class="serif reveal mt-5 text-5xl leading-[0.98] sm:text-6xl lg:text-7xl">{title}</h1>
+      {dek && <p class="reveal-delayed mt-7 max-w-2xl text-lg leading-8 text-[#eee7dc] sm:text-xl">{dek}</p>}
+    </div>
+  </div>
+</section>

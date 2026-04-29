@@ -1,0 +1,40 @@
+---
+interface Props {
+  title?: string;
+  paragraphs: string[];
+  image?: string;
+  quote?: string;
+  quoteAttribution?: string;
+  reverse?: boolean;
+  showTitle?: boolean;
+}
+
+const { title, paragraphs, image, quote, quoteAttribution, reverse = false, showTitle = false } = Astro.props;
+import { sitePath } from "@/utils/paths";
+---
+
+<section class="px-5 py-20 sm:px-8 lg:py-28">
+  <div class={`mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
+    <div>
+      {image && (
+        <img
+          src={sitePath(image)}
+          alt=""
+          class="aspect-[4/5] w-full max-w-md object-cover shadow-2xl shadow-black/10"
+        />
+      )}
+      {quote && (
+        <blockquote class="serif mt-10 border-l border-[#8f3d2f]/60 pl-6 text-2xl leading-snug text-[#5e6958]">
+          “{quote}”
+          {quoteAttribution && <cite class="mt-5 block font-sans text-xs not-italic uppercase tracking-[0.18em] text-[#68635a]">{quoteAttribution}</cite>}
+        </blockquote>
+      )}
+    </div>
+    <article class="max-w-3xl">
+      {showTitle && title && <h2 class="serif text-4xl leading-tight text-[#25231f] sm:text-5xl">{title}</h2>}
+      <div class={`${showTitle && title ? "mt-8" : ""} space-y-6 text-[1.04rem] leading-8 text-[#4f4a42]`}>
+        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </article>
+  </div>
+</section>

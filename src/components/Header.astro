@@ -1,0 +1,23 @@
+---
+import { navItems, site } from "@/data/site";
+import { sitePath } from "@/utils/paths";
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#f4f0e8]/88 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+    <a href={sitePath("/")} class="serif max-w-[13rem] text-[1.05rem] leading-tight tracking-normal text-[#25231f] sm:max-w-none">
+      {site.name}
+    </a>
+    <nav class="hidden items-center gap-6 text-[0.76rem] font-medium uppercase tracking-[0.16em] text-[#4f4a42] lg:flex">
+      {navItems.map((item) => (
+        <a class="transition hover:text-[#8f3d2f]" href={sitePath(item.href)}>{item.label}</a>
+      ))}
+    </nav>
+    <a
+      href={sitePath("/contact/")}
+      class="rounded-full border border-[#8f3d2f]/45 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-[#8f3d2f] transition hover:bg-[#8f3d2f] hover:text-white"
+    >
+      Contact
+    </a>
+  </div>
+</header>

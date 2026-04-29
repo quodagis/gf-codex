@@ -1,0 +1,44 @@
+---
+import InteriorHero from "@/components/InteriorHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, resourcePurchaseText, resourceStores, resources } from "@/data/site";
+import { sitePath } from "@/utils/paths";
+
+const page = pages.resources;
+---
+
+<BaseLayout title="The Gurdjieff Foundation of Los Angeles - Books, Music, Film">
+  <InteriorHero eyebrow={page.eyebrow} title={page.title} />
+  <section class="px-5 py-20 sm:px-8 lg:py-28">
+    <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+      <img src={sitePath(page.image)} alt="" class="aspect-[4/5] w-full max-w-md object-cover shadow-2xl shadow-black/10" />
+      <div class="grid gap-8 md:grid-cols-3">
+        {resources.map((section) => (
+          <article class="border-t border-[#8f3d2f]/35 pt-6">
+            <h2 class="serif text-3xl text-[#25231f]">{section.heading}</h2>
+            <div class="mt-8 space-y-8">
+              {section.groups.map((group) => (
+                <div>
+                  <h3 class="text-sm font-semibold uppercase tracking-[0.16em] text-[#8f3d2f]">{group.label}</h3>
+                  <ul class="mt-4 space-y-3 text-sm leading-7 text-[#4f4a42]">
+                    {group.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
+        <p class="md:col-span-3 text-sm leading-7 text-[#4f4a42]">
+          {resourcePurchaseText}
+          {" "}
+          {resourceStores.map(([label, href], index) => (
+            <>
+              <a class="font-semibold text-[#8f3d2f]" href={href} target="_blank" rel="noreferrer">{label}</a>
+              {index === 0 ? " and " : "."}
+            </>
+          ))}
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,35 @@
+---
+import InteriorHero from "@/components/InteriorHero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { pages, site } from "@/data/site";
+import { sitePath } from "@/utils/paths";
+
+const page = pages.contact;
+---
+
+<BaseLayout title="The Gurdjieff Foundation of Los Angeles- contact us">
+  <InteriorHero eyebrow={page.eyebrow} title={page.title} />
+  <section class="px-5 py-20 sm:px-8 lg:py-28">
+    <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <img src={sitePath(page.image)} alt="" class="aspect-[4/5] w-full max-w-md object-cover shadow-2xl shadow-black/10" />
+      <div class="self-center">
+        <dl class="space-y-8">
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8f3d2f]">Phone</dt>
+            <dd class="serif mt-2 text-3xl text-[#25231f]">{site.phone}</dd>
+          </div>
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8f3d2f]">Email</dt>
+            <dd class="serif mt-2 text-3xl text-[#25231f]">
+              <a href={`mailto:${site.email}`} class="transition hover:text-[#8f3d2f]">{site.email}</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8f3d2f]">Mailing Address</dt>
+            <dd class="serif mt-2 max-w-xl text-3xl leading-snug text-[#25231f]">{site.address}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
