@@ -1,0 +1,29 @@
+---
+import { links, pages } from "@/data/site";
+import ClassicLayout from "@/layouts/ClassicLayout.astro";
+import { sitePath } from "@/utils/paths";
+
+const page = pages.links;
+---
+
+<ClassicLayout
+  title={`The Gurdjieff Foundation of Los Angeles - ${page.title}`}
+  current="foundations"
+>
+  <article class="classic-page">
+    <header class="classic-hero">
+      <p class="classic-eyebrow">{page.eyebrow}</p>
+      <h1 class="classic-title">{page.title}</h1>
+    </header>
+
+    <figure class="classic-photo classic-photo-banner">
+      <img src={sitePath(page.image)} alt="" />
+    </figure>
+
+    <section class="classic-link-grid" aria-label="Foundations in North America">
+      {links.map(([label, href]) => (
+        <a href={href} target="_blank" rel="noreferrer">{label}</a>
+      ))}
+    </section>
+  </article>
+</ClassicLayout>

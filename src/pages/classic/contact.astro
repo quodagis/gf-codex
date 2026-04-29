@@ -1,0 +1,39 @@
+---
+import { pages, site } from "@/data/site";
+import ClassicLayout from "@/layouts/ClassicLayout.astro";
+import { sitePath } from "@/utils/paths";
+
+const page = pages.contact;
+---
+
+<ClassicLayout
+  title="The Gurdjieff Foundation of Los Angeles - Contact Us"
+  current="contact"
+>
+  <article class="classic-page">
+    <header class="classic-hero">
+      <p class="classic-eyebrow">{page.eyebrow}</p>
+      <h1 class="classic-title">{page.title}</h1>
+    </header>
+
+    <section class="classic-contact-grid" aria-label="Contact">
+      <figure class="classic-photo">
+        <img src={sitePath(page.image)} alt="" />
+      </figure>
+      <dl class="classic-contact-list">
+        <div>
+          <dt class="classic-section-label">Phone</dt>
+          <dd>{site.phone}</dd>
+        </div>
+        <div>
+          <dt class="classic-section-label">Email</dt>
+          <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+        </div>
+        <div>
+          <dt class="classic-section-label">Mailing Address</dt>
+          <dd>{site.address}</dd>
+        </div>
+      </dl>
+    </section>
+  </article>
+</ClassicLayout>

@@ -36,7 +36,7 @@ GitHub status:
 - Pages deploy is workflow-based via `.github/workflows/deploy-pages.yml`.
 - Current branch: `master`.
 
-## In Progress: Classic Alternate Design
+## Classic Alternate Design
 
 Dan provided a Claude mockup URL and asked for an alternate version of the site that keeps the same old-site copy but uses the mockup's classical style. He specifically likes the home page title/header "A way of inner search."
 
@@ -54,7 +54,7 @@ Mockup style notes:
 - Enneagram line figure between prose sections.
 - Footer with foundation name, "A branch established 1959", phone/email, and city lineage text.
 
-Files already added for this WIP:
+Classic design scaffold:
 
 - `src/styles/classic.css`
 - `src/layouts/ClassicLayout.astro`
@@ -62,13 +62,27 @@ Files already added for this WIP:
 - `src/components/classic/ClassicFooter.astro`
 - `src/components/classic/Enneagram.astro`
 
-Important: no `/classic/` pages have been created yet, and the current site pages have not yet been wired to the alternate design. Existing published pages should be unaffected by this partial scaffold.
+Classic routes added:
+
+- `/classic/`
+- `/classic/gurdjieff/`
+- `/classic/foundation/`
+- `/classic/practice/`
+- `/classic/resources/`
+- `/classic/links/`
+- `/classic/contact/`
+
+The current site header now includes a "Classic" comparison link to `/classic/`. The Classic header includes "Current" back to `/`.
+
+Validation completed:
+
+- `npm run check`
+- `npm run build`
+- `GITHUB_PAGES=true npm run build`
+- Screenshot spot checks for `/classic/`, `/classic/foundation/`, and mobile `/classic/contact/`
 
 ## Next Steps
 
-1. Create `/classic/` page routes for home, biography, foundation, practice, resources, links, and contact using `ClassicLayout`.
-2. Reuse existing content from `src/data/site.ts`; allow the classic home title "A way of inner search." per Dan's instruction.
-3. Add a comparison link from the current header to `/classic/`, and keep the Classic header's "Current" link back to `/`.
-4. Run `npm run check`, `npm run build`, and `GITHUB_PAGES=true npm run build`.
-5. Capture screenshots for `/classic/` and at least one interior page.
-6. Commit and push when the alternate design is usable.
+1. Review the classic alternate design in browser and choose which direction to refine.
+2. If accepted, commit and push the classic alternate version.
+3. After visual direction is selected, revisit the CMS checkpoint: TinaCMS vs Sanity.

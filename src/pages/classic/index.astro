@@ -1,0 +1,32 @@
+---
+import Enneagram from "@/components/classic/Enneagram.astro";
+import { pages } from "@/data/site";
+import ClassicLayout from "@/layouts/ClassicLayout.astro";
+import { sitePath } from "@/utils/paths";
+
+const page = pages.home;
+---
+
+<ClassicLayout
+  title="A way of inner search - The Gurdjieff Foundation of Los Angeles"
+  description={page.paragraphs[5]}
+  current="home"
+>
+  <article class="classic-page">
+    <header class="classic-hero">
+      <p class="classic-eyebrow">The Gurdjieff Foundation of Los Angeles</p>
+      <h1 class="classic-title">A way of inner search.</h1>
+      <p class="classic-subtitle">Los Angeles</p>
+    </header>
+
+    <figure class="classic-photo classic-photo-wide">
+      <img src={sitePath(page.image)} alt="" />
+    </figure>
+
+    <div class="classic-prose">
+      {page.paragraphs.slice(0, 2).map((paragraph) => <p>{paragraph}</p>)}
+      <Enneagram />
+      {page.paragraphs.slice(2).map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </article>
+</ClassicLayout>

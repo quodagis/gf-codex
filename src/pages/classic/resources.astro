@@ -1,0 +1,54 @@
+---
+import {
+  pages,
+  resourcePurchaseText,
+  resourceStores,
+  resources,
+} from "@/data/site";
+import ClassicLayout from "@/layouts/ClassicLayout.astro";
+import { sitePath } from "@/utils/paths";
+
+const page = pages.resources;
+---
+
+<ClassicLayout
+  title="The Gurdjieff Foundation of Los Angeles - Books, Music, Film"
+  current="books"
+>
+  <article class="classic-page">
+    <header class="classic-hero">
+      <p class="classic-eyebrow">{page.eyebrow}</p>
+      <h1 class="classic-title">{page.title}</h1>
+    </header>
+
+    <figure class="classic-photo classic-photo-banner">
+      <img src={sitePath(page.image)} alt="" />
+    </figure>
+
+    <section class="classic-resource-grid" aria-label="Resources">
+      {resources.map((section) => (
+        <article class="classic-resource-card">
+          <h2>{section.heading}</h2>
+          {section.groups.map((group) => (
+            <div>
+              <h3 class="classic-section-label">{group.label}</h3>
+              <ul>
+                {group.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </article>
+      ))}
+      <p class="classic-resource-note">
+        {resourcePurchaseText}
+        {" "}
+        {resourceStores.map(([label, href], index) => (
+          <>
+            <a href={href} target="_blank" rel="noreferrer">{label}</a>
+            {index === 0 ? " and " : "."}
+          </>
+        ))}
+      </p>
+    </section>
+  </article>
+</ClassicLayout>
