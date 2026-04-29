@@ -1,0 +1,32 @@
+---
+import { sitePath } from "@/utils/paths";
+
+interface Props {
+  current?: string;
+}
+
+const { current = "home" } = Astro.props;
+
+const nav = [
+  ["home", "Home", "/classic/"],
+  ["biography", "Biography", "/classic/gurdjieff/"],
+  ["work", "The Work in Los Angeles", "/classic/foundation/"],
+  ["groups", "Groups & Movements", "/classic/practice/"],
+  ["books", "Books, Music, Film", "/classic/resources/"],
+  ["foundations", "Foundations", "/classic/links/"],
+  ["current", "Current", "/"],
+];
+---
+
+<header class="classic-header">
+  <a href={sitePath("/classic/")} class="classic-wordmark">
+    The Gurdjieff Foundation
+    <span>of Los Angeles</span>
+  </a>
+  <nav class="classic-nav" aria-label="Classic site navigation">
+    {nav.map(([key, label, href]) => (
+      <a href={sitePath(href)} aria-current={current === key ? "page" : undefined}>{label}</a>
+    ))}
+  </nav>
+  <hr class="classic-rule" />
+</header>

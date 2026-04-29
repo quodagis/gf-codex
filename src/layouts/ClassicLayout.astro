@@ -1,0 +1,35 @@
+---
+import ClassicFooter from "@/components/classic/ClassicFooter.astro";
+import ClassicHeader from "@/components/classic/ClassicHeader.astro";
+import "@/styles/global.css";
+import "@/styles/classic.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: string;
+}
+
+const {
+  title = "The Gurdjieff Foundation of Los Angeles",
+  description = "The Gurdjieff Foundation of Los Angeles",
+  current = "home",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="classic-shell">
+    <ClassicHeader current={current} />
+    <main>
+      <slot />
+    </main>
+    <ClassicFooter />
+  </body>
+</html>
