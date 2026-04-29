@@ -15,7 +15,6 @@ const nav = [
   ["books", "Books, Music, Film", "/classic/resources/"],
   ["foundations", "Foundations", "/classic/links/"],
   ["contact", "Contact", "/classic/contact/"],
-  ["current", "Current", "/"],
 ];
 ---
 
@@ -29,5 +28,13 @@ const nav = [
       <a href={sitePath(href)} aria-current={current === key ? "page" : undefined}>{label}</a>
     ))}
   </nav>
+  <details class="classic-mobile-menu">
+    <summary>Menu</summary>
+    <nav aria-label="Classic mobile site navigation">
+      {nav.map(([key, label, href]) => (
+        <a href={sitePath(href)} aria-current={current === key ? "page" : undefined}>{label}</a>
+      ))}
+    </nav>
+  </details>
   <hr class="classic-rule" />
 </header>
