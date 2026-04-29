@@ -112,7 +112,6 @@
 .classic-eyebrow,
 .classic-subtitle,
 .classic-placeholder figcaption,
-.classic-enneagram figcaption,
 .classic-section-label,
 .classic-footer-meta {
   font-family: var(--classic-meta);
@@ -125,7 +124,6 @@
 .classic-eyebrow,
 .classic-subtitle,
 .classic-placeholder figcaption,
-.classic-enneagram figcaption,
 .classic-section-label,
 .classic-footer-meta {
   color: var(--classic-quiet);
@@ -258,9 +256,22 @@
 .classic-enneagram {
   display: grid;
   justify-items: center;
-  gap: 12px;
   margin: 48px 0 52px;
   color: var(--classic-quiet);
+}
+
+.classic-enneagram svg {
+  width: 220px;
+  max-width: 70vw;
+  height: auto;
+}
+
+.classic-enneagram circle,
+.classic-enneagram path {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.2;
 }
 
 .classic-split {

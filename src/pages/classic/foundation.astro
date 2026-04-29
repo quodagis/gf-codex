@@ -4,17 +4,18 @@ import ClassicLayout from "@/layouts/ClassicLayout.astro";
 import { sitePath } from "@/utils/paths";
 
 const page = pages.foundation;
+const title = "Gurdjieff Work in LA";
 ---
 
 <ClassicLayout
-  title={`The Gurdjieff Foundation of Los Angeles - ${page.title}`}
+  title={`The Gurdjieff Foundation of Los Angeles - ${title}`}
   description={page.paragraphs[5]}
   current="work"
 >
   <article class="classic-page">
     <header class="classic-hero">
       <p class="classic-eyebrow">{page.eyebrow}</p>
-      <h1 class="classic-title">{page.title}</h1>
+      <h1 class="classic-title">{title}</h1>
     </header>
 
     <div class="classic-split">
