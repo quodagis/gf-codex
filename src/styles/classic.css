@@ -181,6 +181,16 @@
   aspect-ratio: 21 / 9;
 }
 
+.classic-photo-portrait {
+  width: min(26rem, 100%);
+  margin: 0 auto;
+  aspect-ratio: 250 / 304;
+}
+
+.classic-photo-portrait img {
+  object-fit: cover;
+}
+
 .classic-placeholder {
   width: min(52rem, 100%);
   margin: 0 auto 64px;
