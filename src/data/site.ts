@@ -161,7 +161,7 @@ export const resourcePurchaseText =
   "Gurdjieff's books, music, and film can be purchased online through";
 
 export const resourceStores = [
-  ["By The Way Books", "http://www.bythewaybooks.com/cgi-bin/btw455/index.html"],
+  ["By The Way Books", "https://www.bythewaybooks.com/searchResults.php?category_id=1455&action=browse&orderBy="],
   ["Gurdjieff Books and Music", "https://www.gurdjieffbooksandmusic.com/"],
 ];
 
