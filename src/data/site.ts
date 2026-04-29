@@ -13,7 +13,7 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "Biography", href: "/gurdjieff/" },
   { label: "Gurdjieff Work in LA", href: "/foundation/" },
-  { label: "Program", href: "/practice/" },
+  { label: "Our Practice", href: "/practice/" },
   { label: "Resources", href: "/resources/" },
   { label: "Links", href: "/links/" },
   { label: "Contact", href: "/contact/" },
@@ -52,7 +52,7 @@ export const pages = {
   },
   foundation: {
     eyebrow: "Gurdjieff Work in LA",
-    title: "Gurdjieff's work in LA",
+    title: "Gurdjieff Work in LA",
     image: "/images/lafoundpic.gif",
     paragraphs: [
       "A new life can then appear in a new set of conditions which only someone with an objective consciousness can create and develop.",
@@ -91,7 +91,7 @@ export const pages = {
   },
   links: {
     eyebrow: "Links",
-    title: "Gurdjieff's foundations in North America",
+    title: "Gurdjieff Foundations in North America",
     image: "/images/Linkspic.jpg",
   },
   contact: {
